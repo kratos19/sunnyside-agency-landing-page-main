@@ -11,7 +11,7 @@ body {
 }
 
 .header h1 {
-  padding-top: 144px;
+  padding: 144px 40px 0 40px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -33,16 +33,25 @@ body {
 .contact-section {
   background-color: hsl(0, 0%, 100%);
   text-align: center;
-  width: 90%;
+  width: calc(100% - 40px);
   margin: 0 auto;
   position: absolute;
   top: 105px;
   left: 20px;
   display: none;
+  cursor: pointer;
 }
 
 .active {
   display: block;
+}
+
+.contact-section li {
+  width: 100px;
+  height: 55px;
+  border-radius: 30px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
 .contact-section li a {
@@ -50,21 +59,26 @@ body {
   font-size: 17px;
   font-family: "Barlow";
   font-weight: 600;
-  display: block;
-  margin-top: 30px;
+  display: inline-block;
   color: #848290;
+  margin-top: 15px;
 }
 
-.contact-section li button:hover {
-  background-color: yellow;
+.btn-contact {
+  background-color: hsl(51, 100%, 49%);
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 15px;
+  color: black;
 }
 
-.contact-section .contact {
-  margin-bottom: 30px;
+.contact-section .btn-contact a {
+  color: black;
+  font-family: "Fraunces";
 }
 
 .contact-section ul {
-  display: block;
+  display: inline-block;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -122,17 +136,28 @@ body {
   text-decoration: none;
   font-family: "Fraunces";
   color: black;
-  display: block;
+  display: inline-block;
   margin-bottom: 71px;
+}
+
+.content .yellow {
+  text-decoration: underline hsl(51, 100%, 49%) 5px;
+}
+
+.content .red {
+  text-decoration: underline hsl(7, 99%, 70%) 5px;
+}
+
+.design {
+  display: block;
+  background-image: url("../images/mobile/image-graphic-design.jpg");
+  background-size: cover;
+  color: hsl(167, 40%, 24%);
 }
 
 .content-image {
   text-align: center;
   padding-top: 405px;
-  background-image: url("../images/mobile/image-graphic-design.jpg");
-  background-size: cover;
-  background-position: center;
-  color: hsl(167, 40%, 24%);
 }
 
 .content-image h2 {
@@ -154,7 +179,6 @@ body {
 .photography {
   background-image: url("../images/mobile/image-photography.jpg");
   background-size: cover;
-  background-position: center;
   color: hsl(198, 62%, 26%);
 }
 
@@ -203,7 +227,7 @@ body {
   font-size: 15px;
 }
 
-.image-section {
+.mobile-img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -220,7 +244,16 @@ body {
 .footer-logo {
   text-align: center;
   padding-top: 64px;
-  margin-bottom: 46px;
+  margin-bottom: 40px;
+}
+
+.footer-logo a {
+  text-decoration: none;
+  font-size: 30px;
+  font-family: "Fraunces";
+  font-weight: 900;
+  text-transform: unset;
+  color: #2a7362;
 }
 
 .footer-about {
@@ -235,8 +268,179 @@ body {
   color: #4a8e7f;
 }
 
+.desktop-nav-bar {
+  display: none;
+}
+
 .footer-media {
   display: flex;
   justify-content: space-evenly;
   padding: 0 40px 80px 40px;
+}
+
+.desktop-img {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .body {
+    font-size: 18px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .nav-bar {
+    padding-top: 46px;
+  }
+
+  .desktop-nav-bar {
+    display: block;
+  }
+
+  .desktop-nav-bar a {
+    margin-right: 53px;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-family: "Barlow";
+  }
+
+  .desktop-nav-bar .highlight-contact {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+    text-transform: uppercase;
+    font-family: "Fraunces";
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 35px;
+  }
+
+  .highlight-contact:hover {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    color: hsl(0, 0%, 100%);
+  }
+
+  .desktop-header {
+    background-image: url(../images/desktop/image-header.jpg);
+  }
+
+  .desktop-header h1 {
+    font-size: 60px;
+
+    margin-bottom: 106px;
+  }
+
+  .arrow .fa-solid {
+    margin-bottom: 330px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .content-brand .text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .inner-text {
+    padding-left: 83px;
+    padding-top: 169px;
+    padding-right: 154px;
+    text-align: left;
+  }
+
+  .content img {
+    margin: 0;
+  }
+
+  .text h2 {
+    padding: 0;
+    padding-right: 243px;
+  }
+
+  .text p {
+    padding: 0;
+  }
+
+  .image-transform-desktop {
+    background-image: url(../images/desktop/image-transform.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 2 / 3;
+    min-height: 600px;
+  }
+
+  .content-brand .image-transform-mobile {
+    display: none;
+  }
+
+  .content-audience .text {
+    grid-column: 2 / 3;
+  }
+
+  .content-audience .image-standout-mobile {
+    display: none;
+  }
+
+  .image-standout-desktop {
+    min-height: 600px;
+    background-image: url(../images/desktop/image-stand-out.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1 / 2;
+  }
+
+  .container-designphoto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .design-desktop {
+    display: block;
+    background-image: url(../images/desktop/image-graphic-design.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .photography-desktop {
+    display: block;
+    background-image: url(../images/desktop/image-photography.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .testimonials-wrapper {
+    display: flex;
+  }
+  .content-image {
+    padding: 405px 160px 0 160px;
+  }
+
+  .image-section .mobile-img {
+    display: none;
+  }
+
+  .image-section {
+    display: block;
+  }
+  .desktop-img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-about,
+  .footer-media {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-about a:hover {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .contact-section {
+    display: none;
+  }
 }
